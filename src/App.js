@@ -36,11 +36,10 @@ export default class App extends Component {
     return (
       <div>
         <Section title="Please leave feedback">
-          <FeedbackOptions options={[good, neutral, bad]} onLeaveFeedback={this.leaveFeedback} />
+          <FeedbackOptions options={["good", "neutral", "bad"]} onLeaveFeedback={this.leaveFeedback} />
         </Section>
 
         <Section title="Statistics">
-          {" "}
           {total > 0 ? (
             <Statistics
               good={good}
