@@ -1,14 +1,10 @@
 import React, { Component } from "react";
 import { Statistics } from "./Statistics/Statistics";
 import { FeedbackOptions } from "./FeedbackOptions/FeedbackOptions";
-/* import PropTypes from 'prop-types' */
+import { Section } from "./Section/Section";
+import { Notification } from "./Notification/Notification";
 
 export default class App extends Component {
-  /* static propTypes = {
-    prop: PropTypes
-  }
- */
-
   state = {
     good: 0,
     neutral: 0,
@@ -39,17 +35,24 @@ export default class App extends Component {
 
     return (
       <div>
-        <section>
-          <h2>Please leave feedback</h2>
-          <FeedbackOptions options={this.state} onLeaveFeedback={this.leaveFeedback}></FeedbackOptions>
-          
-        </section>
+        <Section title="Please leave feedback">
+          <FeedbackOptions options={[good, neutral, bad]} onLeaveFeedback={this.leaveFeedback} />
+        </Section>
 
-        <section title="">
-        
-          <h2>Statistics</h2>
-          <Statistics good={good} neutral={neutral} bad={bad} total={total} positivePercentage={positivePercentage}></Statistics> 
-        </section>
+        <Section title="Statistics">
+          {" "}
+          {total > 0 ? (
+            <Statistics
+              good={good}
+              neutral={neutral}
+              bad={bad}
+              total={total}
+              positivePercentage={positivePercentage}
+            />
+          ) : (
+            <Notification message="There is no feedback"/>
+          )}
+        </Section>
       </div>
     );
   }
