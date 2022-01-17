@@ -1,33 +1,34 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { StatisticsListStyled, StatisticsItemStyled, StatisticsItemResultStyled, StatisticsStyled } from "./Statistics.styled";
 
 export const Statistics = ({good,neutral,bad,total,positivePercentage}) => {
 return (
-    <div>
-<ul>
+    <StatisticsStyled>
+<StatisticsListStyled>
             <li>
-              <p>
-                Good:<span>{good}</span>
-              </p>
+              <StatisticsItemStyled>
+                Good:&nbsp;<StatisticsItemResultStyled>{good}</StatisticsItemResultStyled>
+              </StatisticsItemStyled>
             </li>
             <li>
-              <p>
-                Neutral:<span>{neutral}</span>
-              </p>
+              <StatisticsItemStyled>
+                Neutral:&nbsp;<StatisticsItemResultStyled>{neutral}</StatisticsItemResultStyled>
+              </StatisticsItemStyled>
             </li>
             <li>
-              <p>
-                Bad:<span>{bad}</span>
-              </p>
+              <StatisticsItemStyled>
+                Bad:&nbsp;<StatisticsItemResultStyled>{bad}</StatisticsItemResultStyled>
+              </StatisticsItemStyled>
             </li>
-          </ul>
-          <p>
-            Total:<span>{total}</span>
-          </p>
-          <p>
-            Positive feedback:<span>{positivePercentage}%</span>
-          </p>
-          </div>
+          </StatisticsListStyled>
+          <StatisticsItemStyled>
+            Total:&nbsp;<StatisticsItemResultStyled>{total}</StatisticsItemResultStyled>
+          </StatisticsItemStyled>
+          <StatisticsItemStyled>
+            Positive feedback:&nbsp;<StatisticsItemResultStyled>{positivePercentage}%</StatisticsItemResultStyled>
+          </StatisticsItemStyled>
+          </StatisticsStyled>
 );
 };
 
