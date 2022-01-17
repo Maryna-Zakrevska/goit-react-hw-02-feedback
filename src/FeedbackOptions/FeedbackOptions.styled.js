@@ -20,8 +20,7 @@ const FeedbackButtonStyled = styled.button`
   border-radius: 5px;
   width: 180px;
 
-  :hover/* ,
-  :focus */ {
+  :hover {
     background: linear-gradient(45deg, #f5f7fa, #c3cfe2);
     transform: scale(1.1);
     font-weight: bold;
